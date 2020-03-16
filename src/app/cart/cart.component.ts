@@ -4,6 +4,7 @@ import {CartDataSource} from '../models/cartDataSource';
 import {ProductService} from '../service/product/product.service';
 import {map} from 'rxjs/operators';
 import {Observable} from 'rxjs';
+import {CartData} from "../models/cartData";
 
 @Component({
   selector: 'app-cart',
@@ -25,15 +26,18 @@ export class CartComponent implements OnInit {
   }
 
   getTotalCost(): Observable<number> {
-    return new Observable<number>((obs) => {obs.next(1)});
+
+    return this.dataSource.connect(null).pipe(
+        map((p: CartData[]) =>  p.map(v => v.product.price * v.quantity).reduce((acc, value) => acc + value, 0))
+    );
+
     // return this.dataSource.connect(null).pipe(
     //  map( p => p.map(v => v.product.price * v.quantity).reduce((acc, value) => acc + value, 0)));
   }
 
   getTotalCount(): Observable<number> {
-    return new Observable<number>((obs) => {obs.next(1)});
-    /* return this.dataSource.connect(null).pipe(
-      map( p => p.map(v => v.quantity).reduce((acc, value) => acc + value, 0))); */
+    return this.dataSource.connect(null).pipe(
+      map( (p: CartData[]) => p.map(v => v.quantity).reduce((acc, value) => acc + value, 0)));
   }
 
 }
