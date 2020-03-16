@@ -1,2 +1,0 @@
-# ostara
-Ostara Cleansing website
