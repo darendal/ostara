@@ -134,5 +134,8 @@
       }
     }
   },
-  "defaultProject": "ostara"
+  "defaultProject": "ostara",
+  "cli": {
+    "analytics": "0f121e85-4a4e-4816-96e0-0202783fbdb1"
+  }
 }
