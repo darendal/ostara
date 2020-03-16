@@ -1,0 +1,65 @@
+<div class="product">
+  <div *ngIf="product; else loading" fxFlex fxLayout="column">
+    <h3 class="title">{{product.name}}</h3>
+    <div class="flex-container" fxFlex fxLayout="row" fxlayout.sm="column" fxLayout.xs="column" fxLayoutGap="50px">
+
+      <div fxFlex>
+        <img class="main-image" src="{{product.image}}">
+      </div>
+      <div fxFlex>
+        <div fxFlex fxLayout="column" fxLayoutGap="10px">
+          <div fxFlex>
+            <button mat-raised-button color="primary" (click)="addToCart()">
+              <mat-icon [inline]="true">shopping_cart</mat-icon>
+              Add to Cart ({{count}})
+            </button>
+          </div>
+          <div fxFlex>
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    Price
+                  </td>
+                  <td>
+                   {{product.price | currency}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Stock
+                  </td>
+                  <td>
+                    {{product.stock}}
+                  </td>
+                </tr>
+                <tr>
+                <td>
+                  Weight (approx.)
+                </td>
+                <td>
+                  {{product.weight}} oz.
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <div fxFlex>
+            <h5>Description</h5>
+            <p class="description">
+              {{product.description}}
+            </p>
+          </div>
+          <mat-chip-list [selectable]="false" >
+            <mat-chip color="primary" selected *ngFor="let tag of product.tags">{{tag | titlecase}}</mat-chip>
+          </mat-chip-list>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <ng-template #loading >
+    <mat-spinner [diameter]="200"></mat-spinner>
+  </ng-template>
+</div>
+

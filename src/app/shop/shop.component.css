@@ -1,0 +1,34 @@
+.shop {
+  display: flex;
+  justify-content: center;
+  margin-left: 10%;
+}
+
+.search-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.spacer {
+  padding-top: 3%;
+}
+
+.card-spacer {
+  padding-top: 3%;
+}
+
+.specials-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  font-family: 'La Belle Aurore', cursive;
+  font-size: 24px;
+}
+
