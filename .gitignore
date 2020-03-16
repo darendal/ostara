@@ -44,5 +44,9 @@ testem.log
 Thumbs.db
 
 # Environment Files
-environment.*
+*/environments/environment.*.ts
+*/environments/environment.ts
 
+# Secrets
+.gitsecret/keys/random_seed
+!*.secret
