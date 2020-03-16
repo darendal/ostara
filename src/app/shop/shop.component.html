@@ -1,0 +1,75 @@
+<div class="shop">
+  <div fxFlex fxLayout="row" fxLayout.sm="column" fxLayout.xs="column">
+    <div fxFlex="2"></div>
+    <div fxFlex="78">
+      <div class="spacer"></div>
+      <div
+        fxLayout="row wrap"
+        fxLayoutAlign="start start"
+        fxLayoutGap="5px grid">
+        <ng-container *ngFor="let product of products">
+          <app-product-card fxFlex=" 1 33%"
+                            [product]="product">
+          </app-product-card>
+        </ng-container>
+      </div>
+    </div>
+    <div fxFlex="20">
+        <mat-card>
+          <mat-card-content fxFlex fxLayout="column" >
+            <form class="search-form">
+              <mat-form-field class="full-width">
+                <input matInput placeholder="Search products">
+                <mat-icon matSuffix>search</mat-icon>
+              </mat-form-field>
+              <mat-form-field class="full-width">
+                <mat-chip-list #chipList selectable="true" aria-orientation="vertical">
+                  <mat-chip
+                    *ngFor="let tag of tags"
+                    [removable]="true"
+                    (removed)="remove(tag)"
+
+                    color="accent"
+                    selected="true"
+                    selectable="true"
+                    class="mat-chip-category"
+                  >
+                    {{tag}}
+                    <mat-icon matChipRemove>cancel</mat-icon>
+                  </mat-chip>
+                  <input
+                    placeholder="Search by tag"
+                    #tagInput
+                    [formControl]="tagCtrl"
+                    [matAutocomplete]="auto"
+                    [matChipInputFor]="chipList"
+                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                    [matChipInputAddOnBlur]="false"
+                    (matChipInputTokenEnd)="add($event)">
+                </mat-chip-list>
+                <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+                  <mat-option *ngFor="let tag of filteredTags | async" [value]="tag">
+                    {{tag}}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+            </form>
+          </mat-card-content>
+        </mat-card>
+        <div class="card-spacer"></div>
+        <mat-card>
+          <mat-card-header><span class="specials-header">Bulk Pricing</span></mat-card-header>
+          <mat-card-content >
+            <p></p>
+            <p>
+              Bars priced at $5.50: 6 for $30.
+            </p>
+            <p>
+              Bars priced at $7.00: 3 for $20.
+            </p>
+          </mat-card-content>
+        </mat-card>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,19 @@
+<div class="background">
+  <h2>Ostara Cleansing Co.</h2>
+</div>
+<div class="boxes">
+  <app-home-boxes></app-home-boxes>
+</div>
+
+<h3>Spotlight Products</h3>
+<div fxLayout="row"
+     fxLayoutAlign="center center"
+     fxLayoutGap="4px">
+  <div fxFlex="70">
+    <div fxLayout="row" fxLayoutGap="5px">
+      <app-product-card fxFlex=" 1 33%" *ngFor="let product of products" [product]="product"></app-product-card>
+    </div>
+  </div>
+</div>
+<div class="spacer"></div>
+

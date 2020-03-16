@@ -1,0 +1,14 @@
+
+<div *ngIf="product">
+
+  <a routerLink="/shop/product/{{product.id}}" class="card-link">
+    <mat-card matRipple>
+      <img mat-card-image src="{{product.image}}"/>
+      <mat-card-header>
+        <mat-card-title>{{product.name}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-subtitle>{{product.brief}}</mat-card-subtitle>
+    </mat-card>
+  </a>
+
+</div>

@@ -1,0 +1,50 @@
+.logo{
+  width: 90px;
+  margin-bottom: 0;
+}
+.wrap-branding{
+  display: block;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 20px 0 15px;
+  text-align: center;
+  transition: all .5s ease-in-out;
+  z-index: 9;
+}
+
+.nav {
+  justify-content: center;
+  text-align: center;
+}
+
+.sidebar {
+
+  flex: 0 0 12em;
+}
+.title-bar {
+  justify-content: center;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  text-align: center;
+}
+
+
+mat-sidenav {
+  width: 160px;
+  -moz-box-shadow:    -1px 0 5px 0 #555;
+  -webkit-box-shadow: -1px 0 5px 0 #555;
+  box-shadow:         -1px 0 5px 0 #555;
+}
+
+mat-list-option {
+  width: 100%;
+}
+
+mat-grid-tile{
+  background: aqua;
+}

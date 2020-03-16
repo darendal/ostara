@@ -1,0 +1,94 @@
+.title {
+  text-transform: capitalize;
+  margin-bottom: 30px;
+  margin-top: -5px;
+}
+
+.product {
+  display: flex;
+  padding: 55px;
+  justify-content: center;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.main-image {
+  width: 100%;
+  border: 1px solid #efefef;
+  background: #fff;
+  padding: 10px;
+  min-height: 200px;
+  min-width: 200px;
+  max-height: 600px;
+
+}
+
+.description {
+  text-align: left;
+}
+
+h3 {
+  font-size: 30px;
+  line-height: 36px;
+}
+
+h5 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+p {
+  color: #8f8f8f;
+  transition: all .5s ease-in-out;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+mat-chip-list {
+  display: flex;
+  justify-content: center;
+}
+button {
+  width: 100%;
+  max-width: 500px;
+}
+mat-icon {
+  font-size: 18px;
+  margin-top: -3px;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  display: table;
+}
+
+table td {
+  padding: 10px 15px;
+  border: 1px solid #efefef;
+}
+
+table td:first-child {
+  width: 120px;
+  font-weight: 700;
+}
+
+td, th {
+  padding: 15px 5px;
+  display: table-cell;
+  text-align: left;
+  vertical-align: middle;
+  border-radius: 2px;
+}
+
+table, td, th {
+  border: none;
+}
+
+table.bordered>tbody>tr, table.bordered>thead>tr {
+  border-bottom: 1px solid #d0d0d0;
+}
+
+tr:nth-child(even) {background-color: #f9f9f9;}
+

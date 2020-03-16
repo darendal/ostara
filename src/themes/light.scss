@@ -1,0 +1,54 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+
+$primary: mat-palette($mat-cyan, 100);
+$accent:  mat-palette($mat-orange, 100, 50, 400);
+$warn:    mat-palette($mat-red, 600);
+
+$list-accent: mat-palette($mat-blue);
+
+$theme: mat-light-theme($primary, $accent, $warn);
+
+@include angular-material-theme($theme);
+
+$custom-typography: mat-typography-config(
+  $font-family: 'Raleway',
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(16px, 24px, 500)
+);
+
+// Override typography CSS classes (e.g., mat-h1, mat-display-1, mat-typography, etc.).
+@include mat-base-typography($custom-typography);
+
+// Override typography for a specific Angular Material components.
+@include mat-checkbox-typography($custom-typography);
+
+// Override typography for all Angular Material, including mat-base-typography and all components.
+@include angular-material-typography($custom-typography);
+
+.list-item-active {
+  font-weight: bold;
+
+  text-decoration: underline;
+  text-decoration-color: mat-color($accent, darker);
+
+  -webkit-text-underline-position: under;
+  -ms-text-underline-position: below;
+  text-underline-position: under;
+
+  text-heading-font: "Raleway"
+}
+
+.mat-chip-category {
+  background-color: mat-color($primary) !important;
+}
+
+:root {
+  --color-primary: #{mat-color($primary)};
+  --color-accent: #{mat-color($accent)};
+  --color-warn: #{mat-color($warn)};
+  //--color-success: #{mat-color($app-success)};
+}
+
