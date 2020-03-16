@@ -1,5 +1,5 @@
 import {CartData} from './cartData';
-import {CollectionViewer, DataSource} from '@angular/cdk/typings/collections';
+import {CollectionViewer, DataSource} from '@angular/cdk/collections';
 import {BehaviorSubject, Observable, forkJoin} from 'rxjs';
 import {CartService} from '../service/cart/cart.service';
 import {ProductService} from '../service/product/product.service';

@@ -25,13 +25,15 @@ export class CartComponent implements OnInit {
   }
 
   getTotalCost(): Observable<number> {
-    return this.dataSource.connect(null).pipe(
-      map( p => p.map(v => v.product.price * v.quantity).reduce((acc, value) => acc + value, 0)));
+    return new Observable<number>((obs) => {obs.next(1)});
+    // return this.dataSource.connect(null).pipe(
+    //  map( p => p.map(v => v.product.price * v.quantity).reduce((acc, value) => acc + value, 0)));
   }
 
   getTotalCount(): Observable<number> {
-    return this.dataSource.connect(null).pipe(
-      map( p => p.map(v => v.quantity).reduce((acc, value) => acc + value, 0)));
+    return new Observable<number>((obs) => {obs.next(1)});
+    /* return this.dataSource.connect(null).pipe(
+      map( p => p.map(v => v.quantity).reduce((acc, value) => acc + value, 0))); */
   }
 
 }
