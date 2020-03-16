@@ -23,8 +23,8 @@ export class ShopComponent implements OnInit {
   tags: string[] = [];
   allTags: string[] = ['Apple', 'Lemon', 'Lime', 'Orange', 'Strawberry'];
 
-  @ViewChild('tagInput') tagInput: ElementRef<HTMLInputElement>;
-  @ViewChild('auto') matAutocomplete: MatAutocomplete;
+  @ViewChild('tagInput', { static: true }) tagInput: ElementRef<HTMLInputElement>;
+  @ViewChild('auto', { static: true }) matAutocomplete: MatAutocomplete;
 
 
   constructor(private productService: ProductService) { }
